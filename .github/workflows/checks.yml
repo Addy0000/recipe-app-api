@@ -6,7 +6,7 @@ on: [push]
 jobs: 
   test-lint:
     name: Test and Lint
-    runs_on: ubuntu-20.04
+    runs-on: ubuntu-20.04
     steps: 
      
       - name: Login to Docker hub
@@ -16,7 +16,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: checkout
-        uses: action/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Test
         run: docker-compose run --rm app sh -c "python manage.py test" 
